@@ -20,7 +20,8 @@
     "build-dev": "npm run dev && npm run post-dev",
     "dist": "node-sass src/scss/daoistic.scss dist/css/daoistic-dist.css --output-style compressed",
     "post-dist": "postcss dist/css/daoistic-dist.css --no-map --config postcss/dist --output dist/css/daoistic.css",
-    "build-dist": "npm run dist && npm run post-dist"
+    "build-dist": "npm run dist && npm run post-dist",
+    "build": "npm rimraf dist/css/*.css && npm run build-dev && npm run build-dist"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
