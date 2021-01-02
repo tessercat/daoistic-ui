@@ -21,16 +21,14 @@
     "dist": "node-sass src/scss/daoistic.scss dist/css/daoistic-dist.css --output-style compressed",
     "post-dist": "postcss dist/css/daoistic-dist.css --no-map --config postcss/dist --output dist/css/daoistic.css",
     "build-dist": "npm run dist && npm run post-dist",
-    "build": "npm rimraf dist/css/*.css && npm run build-dev && npm run build-dist"
+    "build": "rimraf dist/css/* && npm run build-dev && npm run build-dist && gzip dist/css/*.*.css"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
     "cssnano": "^4.1.10",
+    "gzip-cli": "^1.2.0",
     "node-sass": "^4.14.0",
     "postcss-cli": "^7.1.1",
     "postcss-hash": "^2.0.0"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
   }
 }
