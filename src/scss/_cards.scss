@@ -1,0 +1,57 @@
+/* Daoistic cards */
+
+$card-date-font-size: $body-font-size - 0.3rem !default;
+$card-date-font-size-mobile: $body-font-size-mobile - 0.2rem !default;
+$card-figure-size: 100px;
+$card-figure-size-mobile: 50px;
+$card-img-radius: 10px;
+$card-img-radius-mobile: 5px;
+
+main.cards {
+  padding: 3rem 1rem 0;
+  max-width: 825px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main.cards article {
+  display: flex;
+  padding: 2rem 0;
+  border-bottom: 4px solid $light-background;
+}
+
+main.cards article section.card-image a {
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 0;
+  }
+}
+
+main.cards article section.card-figure figure {
+  height: $card-figure-size-mobile;
+  width: $card-figure-size-mobile;
+  margin-right: 1rem;
+}
+
+main.cards article section.card-figure img {
+  max-width: 100%;
+  border-radius: $card-img-radius-mobile;
+}
+
+main.cards article section.card-details p.date {
+  font-size: $card-date-font-size-mobile;
+}
+
+@include small-breakpoint {
+  main.cards article section.card-figure figure {
+    height: $card-figure-size;
+    width: $card-figure-size;
+  }
+  main.cards article section.card-figure img {
+    border-radius: $card-img-radius;
+  }
+  main.cards article section.card-details p.date {
+    font-size: $card-date-font-size;
+  }
+}

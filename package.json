@@ -1,0 +1,35 @@
+{
+  "name": "daoistic-ui",
+  "version": "0.0.1",
+  "author": "Peter Christensen",
+  "license": "CC-BY-NC-ND-4.0",
+  "description": "Daoistic UI.",
+  "homepage": "https://daoistic.ca",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tessercat/daoistic-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tessercat/daoistic-ui/issues"
+  },
+  "scripts": {
+    "watch": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --output-style expanded --watch",
+    "dev": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --source-map-contents --output-style expanded",
+    "post-dev": "postcss dist/css/daoistic-dev.css --config postcss/dev --no-map --output dist/css/daoistic-postdev.css",
+    "build-dev": "npm run dev && npm run post-dev",
+    "dist": "node-sass src/scss/daoistic.scss dist/css/daoistic-dist.css --output-style compressed",
+    "post-dist": "postcss dist/css/daoistic-dist.css --no-map --config postcss/dist --output dist/css/daoistic.css",
+    "build-dist": "npm run dist && npm run post-dist"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.14.0",
+    "postcss-cli": "^7.1.1",
+    "postcss-hash": "^2.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
