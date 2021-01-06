@@ -32,20 +32,24 @@ $heading-font-weight: 600 !default;
 $heading-font-family: sans-serif !default;
 $heading-line-height: 1.2 !default;
 
-$h1: 1.9rem !default;
-$h2: 1.8rem !default;
-$h3: 1.7rem !default;
-$h4: 1.6rem !default;
-$h5: 1.5rem !default;
+$h1: 1.8rem !default;
+$h2: 1.65rem !default;
+$h3: 1.5rem !default;
+$h4: 1.35rem !default;
+$h5: 1.2rem !default;
 
 $h1-mobile: 1.6rem !default;
-$h2-mobile: 1.5rem !default;
-$h3-mobile: 1.4rem !default;
-$h4-mobile: 1.3rem !default;
-$h5-mobile: 1.2rem !default;
+$h2-mobile: 1.45rem !default;
+$h3-mobile: 1.3rem !default;
+$h4-mobile: 1.15rem !default;
+$h5-mobile: 1rem !default;
 
 // Spacing
 $margins: 1.5rem !default;
+
+// Error
+$error-font-size: $body-font-size + 0.2rem !default;
+$error-font-size-mobile: $body-font-size-mobile + 0.1rem !default;
 
 // Footer
 $footer-font-size: $body-font-size - 0.2rem !default;

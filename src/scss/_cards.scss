@@ -1,5 +1,28 @@
-/* Daoistic cards */
+/* Daoistic list of cards */
 
+main.cards {
+  line-height: normal;
+}
+
+main.cards header {
+  padding: 2rem 0;
+  border-bottom: 4px solid $light-background;
+}
+
+main.cards header h1 {
+  margin: initial;
+}
+
+main.cards header section.subtitle {
+  font-style: italic;
+}
+
+/* Daoistic blog entry card */
+
+$card-link-font-size: $body-font-size + 0.2rem !default;
+$card-link-font-size-mobile: $body-font-size-mobile + 0.1rem !default;
+$card-date-padding-top: 0.3rem !default;
+$card-date-padding-top-mobile: 0.2rem !default;
 $card-date-font-size: $body-font-size - 0.3rem !default;
 $card-date-font-size-mobile: $body-font-size-mobile - 0.2rem !default;
 $card-figure-size: 100px;
@@ -7,20 +30,25 @@ $card-figure-size-mobile: 50px;
 $card-img-radius: 10px;
 $card-img-radius-mobile: 5px;
 
-main.cards {
-  padding: 3rem 1rem 0;
-  max-width: 825px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-main.cards article {
+article.card {
   display: flex;
   padding: 2rem 0;
   border-bottom: 4px solid $light-background;
 }
 
-main.cards article section.card-image a {
+article.card section.figure figure {
+  height: $card-figure-size-mobile;
+  width: $card-figure-size-mobile;
+  margin-top: 0.2rem;
+  margin-right: 1rem;
+}
+
+article.card section.figure img {
+  max-width: 100%;
+  border-radius: $card-img-radius-mobile;
+}
+
+article.card section.image a {
   &:hover,
   &:active,
   &:focus {
@@ -28,30 +56,28 @@ main.cards article section.card-image a {
   }
 }
 
-main.cards article section.card-figure figure {
-  height: $card-figure-size-mobile;
-  width: $card-figure-size-mobile;
-  margin-right: 1rem;
+article.card section.details a {
+  font-size: $card-link-font-size-mobile;
 }
 
-main.cards article section.card-figure img {
-  max-width: 100%;
-  border-radius: $card-img-radius-mobile;
-}
-
-main.cards article section.card-details p.date {
+article.card section.details p.date {
   font-size: $card-date-font-size-mobile;
+  padding-top: $card-date-padding-top-mobile;
 }
 
 @include small-breakpoint {
-  main.cards article section.card-figure figure {
+  article.card section.figure figure {
     height: $card-figure-size;
     width: $card-figure-size;
   }
-  main.cards article section.card-figure img {
+  article.card section.figure img {
     border-radius: $card-img-radius;
   }
-  main.cards article section.card-details p.date {
+  article.card section.details a {
+    font-size: $card-link-font-size;
+  }
+  article.card section.details p.date {
     font-size: $card-date-font-size;
+    padding-top: $card-date-padding-top;
   }
 }

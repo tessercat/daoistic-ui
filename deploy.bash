@@ -1,5 +1,5 @@
 # Run this as root from /opt/daoistic.
-APP=blog
+APP=common
 FROM=/opt/daoistic/ui/dist/css
 
 NGINX_STATIC=/opt/daoistic/static/$APP/css

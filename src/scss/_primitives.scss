@@ -1,4 +1,4 @@
-/* Daoistic is much obliged to Tania Rascia's MIT-licensed primitive-ui. */
+/* Primitives from Tania Rascia's MIT-licensed primitive-ui. */
 
 // Reset
 html {
@@ -128,35 +128,3 @@ a {
     border-bottom: 3px solid $link-color;
   }
 }
-
-main footer {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  font-size: $footer-font-size-mobile;
-  text-align: center;
-}
-
-main footer a {
-  font-weight: 500;
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom: 2px solid $link-color;
-  }
-}
-
-main footer ul {
-  list-style: none;
-  padding: inherit;
-}
-
-main footer ul li {
-  margin-bottom: 1rem;
-}
-
-@include small-breakpoint {
-  main footer {
-    font-size: $footer-font-size;
-  }
-}
-
