@@ -14,14 +14,16 @@
     "url": "https://github.com/tessercat/daoistic-ui/issues"
   },
   "scripts": {
+    "clean": "rimraf dist/css/*",
+    "gzip": "gzip dist/css/*.*.css",
     "watch": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --output-style expanded --watch",
     "dev": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --source-map-contents --output-style expanded",
     "post-dev": "postcss dist/css/daoistic-dev.css --config postcss/dev --no-map --output dist/css/daoistic-postdev.css",
-    "build-dev": "npm run dev && npm run post-dev",
+    "build-dev": "npm run clean && npm run dev && npm run post-dev",
     "dist": "node-sass src/scss/daoistic.scss dist/css/daoistic-dist.css --output-style compressed",
     "post-dist": "postcss dist/css/daoistic-dist.css --no-map --config postcss/dist --output dist/css/daoistic.css",
-    "build-dist": "npm run dist && npm run post-dist",
-    "build": "rimraf dist/css/* && npm run build-dev && npm run build-dist && gzip dist/css/*.*.css"
+    "build-dist": "npm run clean && npm run dist && npm run post-dist && npm run gzip",
+    "build": "npm run clean && npm run dev && npm run post-dev && npm run dist && npm run post-dist && npm run gzip"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
