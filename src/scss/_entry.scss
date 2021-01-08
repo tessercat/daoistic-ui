@@ -24,16 +24,6 @@ article.entry {
   padding: 0 1rem;
 }
 
-article.entry a.hanzi {
-  font-weight: inherit;
-  color: inherit;
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom: inherit;
-  }
-}
-
 article.entry section.content p {
   font-size: $entry-font-size-mobile;
   font-family: serif;
