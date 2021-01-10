@@ -14,16 +14,21 @@
     "url": "https://github.com/tessercat/daoistic-ui/issues"
   },
   "scripts": {
-    "clean": "rimraf dist/css/*",
-    "gzip": "gzip dist/css/*.*.css",
-    "watch": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --output-style expanded --watch",
-    "dev": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --source-map-contents --output-style expanded",
-    "post-dev": "postcss dist/css/daoistic-dev.css --config postcss/dev --no-map --output dist/css/daoistic-postdev.css",
-    "build-dev": "npm run clean && npm run dev && npm run post-dev",
-    "dist": "node-sass src/scss/daoistic.scss dist/css/daoistic-dist.css --output-style compressed",
-    "post-dist": "postcss dist/css/daoistic-dist.css --no-map --config postcss/dist --output dist/css/daoistic.css",
-    "build-dist": "npm run clean && npm run dist && npm run post-dist && npm run gzip",
-    "build": "npm run clean && npm run dev && npm run post-dev && npm run dist && npm run post-dist && npm run gzip"
+    "css:clean": "rimraf dist/css/*",
+    "css:gzip": "gzip dist/css/*.*.css",
+    "css:watch": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --output-style expanded --watch",
+    "css:dev": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --source-map-contents --output-style expanded",
+    "css:post-dev": "postcss dist/css/daoistic-dev.css --config postcss/dev --no-map --output dist/css/daoistic-postdev.css",
+    "css:build-dev": "npm run css:clean && npm run css:dev && npm run css:post-dev",
+    "css:dist": "node-sass src/scss/daoistic.scss dist/css/daoistic-dist.css --output-style compressed",
+    "css:post-dist": "postcss dist/css/daoistic-dist.css --no-map --config postcss/dist --output dist/css/daoistic.css",
+    "css:build-dist": "npm run css:clean && npm run css:dist && npm run css:post-dist && npm run css:gzip",
+    "css:build": "npm run css:clean && npm run css:dev && npm run css:post-dev && npm run css:dist && npm run css:post-dist && npm run css:gzip",
+    "js:clean": "rimraf dist/js/*",
+    "js:gzip": "gzip dist/js/*.*.js",
+    "js:build-dist": "npm run js:clean && webpack && npm run js:gzip",
+    "build": "npm run css:build && npm run js:build-dist",
+    "build-dist": "npm run css:build-dist && npm run js:build-dist"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
@@ -31,6 +36,8 @@
     "gzip-cli": "^1.2.0",
     "node-sass": "^4.14.0",
     "postcss-cli": "^7.1.1",
-    "postcss-hash": "^2.0.0"
+    "postcss-hash": "^2.0.0",
+    "webpack": "^5.12.1",
+    "webpack-cli": "^4.3.1"
   }
 }

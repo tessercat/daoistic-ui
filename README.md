@@ -12,8 +12,7 @@ is based loosely on
 Tania Rascia's MIT-licensed
 [primitive-ui](https://taniarascia.github.io/primitive/).
 
-## Browsers
+## Dev
 
-Defaults are good enough.
-
+    npm update
     npx browserslist@latest --update-db

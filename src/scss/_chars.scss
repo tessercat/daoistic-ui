@@ -1,16 +1,33 @@
-/* Daoistic character */
+/* Daoistic definition */
 
-a.unihan {
-  font-weight: inherit;
-  color: inherit;
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom: inherit;
-  }
+#definition {
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  margin-right: 1rem;
+  border: 4px solid $font-color;
+  border-radius: 20px;
+  background-color: black;
+  position: fixed;
+  bottom: 1rem;
+  max-width: $x-small;
+  visibility: hidden;
 }
 
+#definition.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 500ms;
+}
+
+#definition.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 500ms, opacity 500ms;
+}
+
+/* Daoistic lookup */
+
 article.lookup section.output {
+    font-size: x-large;
     padding-bottom: 1.5rem;
 }
 
@@ -39,10 +56,20 @@ article.lookup section.form form input:hover {
   filter: brightness(0.6);
 }
 
+/* Daoistic Unihan character */
+
+a.unihan {
+  font-weight: inherit;
+  color: inherit;
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: inherit;
+  }
+}
+
 article.char {
   display: flex;
-  padding: 1rem 0;
-  border-bottom: 4px solid $light-background;
 }
 
 article.char section.utf8 {
@@ -51,8 +78,8 @@ article.char section.utf8 {
 }
 
 article.char section.refs {
-    text-align: center;
-    padding-right: 1rem;
+  text-align: center;
+  padding-right: 1rem;
 }
 
 article.char section.refs div.kangxi {
@@ -61,6 +88,8 @@ article.char section.refs div.kangxi {
 }
 
 article.char section.refs div.links ul {
+  display: flex;
+  justify-content: space-around;
   list-style: none;
   padding: inherit;
   margin: 0;
