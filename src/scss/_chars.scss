@@ -56,6 +56,14 @@ article.lookup section.form form input:hover {
   filter: brightness(0.6);
 }
 
+/* Daoistic list of Unihan characters */
+
+section.chars > article.char {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid $light-background;
+}
+
 /* Daoistic Unihan character */
 
 a.unihan {
