@@ -26,11 +26,12 @@
     "js:gzip": "gzip dist/js/*.?????.js",
     "js:build-dist": "webpack && npm run js:gzip",
     "build-dist": "npm run css:clean && npm run css:build-dist && npm run js:clean && npm run js:build-dist",
-    "build": "npm run css:clean && npm run css:build-dev && npm run css:build-dist && npm run js:clean && npm run js:build-dist"
+    "build-all": "npm run css:clean && npm run css:build-dev && npm run css:build-dist && npm run js:clean && npm run js:build-dist"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
     "cssnano": "^4.1.10",
+    "eslint": "^7.17.0",
     "gzip-cli": "^1.2.0",
     "node-sass": "^4.14.0",
     "postcss-cli": "^7.1.1",
