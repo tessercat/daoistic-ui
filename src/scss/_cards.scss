@@ -56,10 +56,20 @@ article.card section.image a {
   }
 }
 
-article.card section.details a {
+article.card section.details a.plain {
   font-size: $card-link-font-size-mobile;
 }
 
+article.card section.details a.study {
+  margin-left: 0.3rem;
+  color: transparent;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-hover-color;
+    border-bottom: 0;
+  }
+}
 article.card section.details p.date {
   font-size: $card-date-font-size-mobile;
   padding-top: $card-date-padding-top-mobile;
@@ -73,7 +83,7 @@ article.card section.details p.date {
   article.card section.figure img {
     border-radius: $card-img-radius;
   }
-  article.card section.details a {
+  article.card section.details a.plain {
     font-size: $card-link-font-size;
   }
   article.card section.details p.date {
