@@ -1,0 +1,91 @@
+/* Daoistic Unihan character link */
+
+a.unihan {
+    font-weight: inherit;
+    color: inherit;
+    &:hover,
+    &:active,
+    &:focus {
+        border-bottom: inherit;
+    }
+}
+
+/* Daoistic Unihan character card */
+
+article.character {
+
+    display: flex;
+    padding: 0.5rem 1rem 0.5rem;
+    border-bottom: 4px solid $light-background;
+
+    section.utf8 {
+        padding-right: 1rem;
+        font-size: x-large;
+    }
+
+    section.refs {
+        text-align: center;
+        padding-right: 1rem;
+    }
+
+    div.kangxi {
+        font-size: small;
+        white-space: nowrap;
+    }
+
+    div.links {
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: inherit;
+            margin: 0;
+        }
+
+        li {
+            padding: 0;
+            display: inline-block;
+        }
+    }
+}
+
+/* Daoistic character definition popup */
+
+// Centered at the top
+#definition {
+
+    border: 4px solid $font-color;
+    border-radius: 20px;
+    background-color: black;
+    visibility: hidden;
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+    article.character {
+        border-bottom: none;
+    }
+}
+
+#definition.show {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 500ms;
+}
+
+#definition.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 500ms, opacity 500ms;
+}
+
+@include small-breakpoint {
+    #definition {
+        max-width: $x-small;
+    }
+}

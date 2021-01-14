@@ -21,7 +21,7 @@ function showPanel(event, panel) {
   panel.classList.add('show');
 }
 
-function addVocabListeners() {
+function initDefinitionPopup() {
   const panel = document.querySelector('#definition');
 
   // Hide the panel when the document scrolls.
@@ -56,17 +56,17 @@ function addVocabListeners() {
     });
   });
 
-  logger.info('Vocab enabled.');
+  logger.info('Definition popup initialized.');
 }
 
-// Set log vars and hide vocab elements as soon as the script runs.
+// Set log vars and hide elements as soon as the script runs.
 document.debugLogEnabled = true;
 document.infoLogEnabled = true;
-document.querySelectorAll('.v-toggle').forEach((section) => {
+document.querySelectorAll('.js-hidden').forEach((section) => {
   section.style.display = 'none';
 });
 
 // Init the definitions panel when the page loads.
 window.addEventListener('load', function() {
-  addVocabListeners();
+  initDefinitionPopup();
 });

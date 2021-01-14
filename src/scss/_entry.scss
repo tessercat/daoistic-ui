@@ -1,43 +1,39 @@
-/* Daoistic entry header image */
-
-header.entry-header figure {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 33.333%;
-  position: relative;
-}
-
-header.entry-header figure img {
-  width: 100%;
-  height: auto;
-}
-
 /* Daoistic entry */
 
-$entry-copyright-font-size: $body-font-size - 0.3rem !default;
-$entry-copyright-font-size-mobile: $body-font-size-mobile - 0.2rem !default;
 $entry-font-size: $body-font-size + 0.15rem !default;
 $entry-font-size-mobile: $body-font-size-mobile + 0.1rem !default;
 
-article.entry {
-  max-width: 100%;
-  padding: 0 1rem;
-}
+main.entry {
 
-article.entry section.content p {
-  font-size: $entry-font-size-mobile;
-  font-family: serif;
-}
+    figure {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 33.333%;
+        position: relative;
+    }
 
-article.entry section.copyright {
-  font-size: $entry-copyright-font-size-mobile;
-}
+    img {
+        width: 100%;
+        height: auto;
+    }
 
-@include small-breakpoint {
-  article.entry section.content p {
-    font-size: $entry-font-size;
-  }
-  article.entry section.copyright {
-    font-size: $entry-copyright-font-size;
-  }
+    > article {
+        max-width: 100%;
+        padding: 0 1rem;
+
+        section.content {
+            font-size: $entry-font-size-mobile;
+            font-family: serif;
+        }
+
+        section.copyright {
+            font-size: smaller;
+        }
+
+        @include small-breakpoint {
+            section.content {
+                font-size: $entry-font-size;
+            }
+        }
+    }
 }

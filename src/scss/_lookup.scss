@@ -1,0 +1,38 @@
+/* Daoistic lookup form */
+
+main.lookup {
+
+    section.intro {
+        margin-bottom: 1.5rem;
+        border-bottom: 4px solid $light-background;
+    }
+
+    section.output {
+        font-size: x-large;
+        padding-bottom: 1.5rem;
+    }
+
+    form {
+        display: grid;
+
+        textarea {
+            resize: none;
+            border-radius: 5px;
+            color: $font-color;
+            background-color: $light-background;
+        }
+
+        input {
+            margin-top: 0.5rem;
+            width: max-content;
+            padding: .4rem .7rem;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: green;
+            color: $font-color;
+            &:hover {
+                filter: brightness(0.6);
+            }
+        }
+    }
+}
