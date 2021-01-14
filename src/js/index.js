@@ -4,21 +4,29 @@
  */
 import logger from './logger.js';
 
+function showPanel(event, panel) {
+  const article = document.querySelector(event.target.attributes.href.value);
+  panel.innerHTML = article.outerHTML;
+  panel.classList.remove('hide');
+  panel.classList.add('show');
+}
+
 function hidePanel(panel) {
   panel.classList.add('hide');
   panel.classList.remove('show');
 }
 
-function showPanel(event, panel) {
-  // Load clicked-link data into the definition panel.
-  const article = document.querySelector(event.target.attributes.href.value);
-  panel.innerHTML = article.outerHTML;
-  //logger.info('height', event.target.offsetHeight);
-  //logger.info('left', event.target.offsetLeft);
-  //logger.info('top', event.target.offsetTop);
-  //logger.info('width', event.target.offsetWidth);
-  panel.classList.remove('hide');
-  panel.classList.add('show');
+function showCharacters(event) {
+  const selector = `a.unihan.${event.target.text}`;
+  document.querySelectorAll(selector).forEach((link) => {
+    link.classList.add('highlight');
+  });
+}
+
+function hideCharacters() {
+  document.querySelectorAll('a.unihan.highlight').forEach((link) => {
+    link.classList.remove('highlight');
+  });
 }
 
 function initDefinitionPopup() {
@@ -29,12 +37,9 @@ function initDefinitionPopup() {
     hidePanel(panel);
   });
 
-  // Hide the panel when the document is clicked, unless the click is on
-  // a Unihan character link or on the panel itself.
+  // Hide the panel and characters when the document is clicked,
+  // unless the click is on a character link or on the panel itself.
   document.addEventListener('click', (event) => {
-    if (panel.classList.contains('hide')) {
-      return;
-    }
     let exempt = false;
     if (
         event.target.localName === 'a'
@@ -45,18 +50,21 @@ function initDefinitionPopup() {
     }
     if (!exempt) {
       hidePanel(panel);
+      hideCharacters();
     }
   });
 
-  // Show the panel when a Unihan character is clicked.
-  document.querySelectorAll('.unihan').forEach((link) => {
+  // Show panel and characters when a Unihan character is clicked.
+  document.querySelectorAll('a.unihan').forEach((link) => {
     link.addEventListener('click', (event) => {
+      hideCharacters();
+      showCharacters(event);
       showPanel(event, panel);
       event.preventDefault();
     });
   });
 
-  logger.info('Definition popup initialized.');
+  logger.info('Definition popup enabled.');
 }
 
 // Set log vars and hide elements as soon as the script runs.
