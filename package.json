@@ -16,17 +16,18 @@
   "scripts": {
     "css:clean": "rimraf dist/css/*",
     "css:gzip": "gzip dist/css/*.?????.css",
-    "css:sass-dev": "node-sass src/scss/daoistic.scss dist/css/daoistic-dev.css --source-map-contents --output-style expanded",
-    "css:post-dev": "postcss dist/css/daoistic-dev.css --config postcss/dev --no-map --output dist/css/daoistic-postdev.css",
-    "css:build-dev": "npm run css:sass-dev && npm run css:post-dev",
-    "css:sass-dist": "node-sass src/scss/daoistic.scss dist/css/daoistic-dist.css --output-style compressed",
-    "css:post-dist": "postcss dist/css/daoistic-dist.css --no-map --config postcss/dist --output dist/css/daoistic.css",
-    "css:build-dist": "npm run css:sass-dist && npm run css:post-dist && npm run css:gzip",
+    "css:dev:sass": "node-sass src/scss/daoistic.scss dist/css/daoistic.dev.css --no-map --output-style expanded",
+    "css:dev:post": "postcss dist/css/daoistic.dev.css --config postcss/dev --no-map --output dist/css/daoistic.post.css",
+    "css:dev:build": "npm run css:dev:sass && npm run css:dev:post",
+    "css:dist:sass": "node-sass src/scss/daoistic.scss dist/css/daoistic.css --output-style compressed",
+    "css:dist:post": "postcss dist/css/daoistic.css --no-map --config postcss/dist --output dist/css/daoistic.css",
+    "css:dist:build": "npm run css:dist:sass && npm run css:dist:post",
     "js:clean": "rimraf dist/js/*",
     "js:gzip": "gzip dist/js/*.?????.js",
-    "js:build-dist": "webpack && npm run js:gzip",
-    "build-dist": "npm run css:clean && npm run css:build-dist && npm run js:clean && npm run js:build-dist",
-    "build-all": "npm run css:clean && npm run css:build-dev && npm run css:build-dist && npm run js:clean && npm run js:build-dist"
+    "js:build": "webpack",
+    "clean": "npm run css:clean && npm run js:clean",
+    "gzip": "npm run css:gzip && npm run js:gzip",
+    "build": "npm run clean && npm run css:dev:build && npm run css:dist:build && npm run js:build && npm run gzip"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
