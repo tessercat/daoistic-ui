@@ -29,6 +29,7 @@ article.card {
 
     display: flex;
     padding-top: 1rem;
+    padding-bottom: 1.3rem;
     border-bottom: 4px solid $light-background;
 
     figure {
@@ -67,9 +68,13 @@ article.card {
         }
     }
 
+    p {
+        margin: 1rem 0 0;
+    }
+
     p.date {
         font-size: smaller;
-        padding-top: 0.3rem;
+        margin: 0.5rem 0 0;
     }
 
     @include small-breakpoint {
