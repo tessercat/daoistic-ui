@@ -3,11 +3,13 @@
 a.unihan {
     font-weight: inherit;
     color: inherit;
+
     &:hover,
     &:active,
     &:focus {
         border-bottom: inherit;
     }
+
     &.highlight {
         background-color: rgba($link-color, 0.6);
     }
@@ -16,7 +18,6 @@ a.unihan {
 /* Daoistic Unihan character card */
 
 article.character {
-
     display: flex;
     padding: 0.5rem 1rem 0.5rem;
     border-bottom: 4px solid $light-background;
@@ -37,7 +38,6 @@ article.character {
     }
 
     div.links {
-
         ul {
             display: flex;
             justify-content: space-around;
@@ -56,7 +56,6 @@ article.character {
 /* Daoistic character definition popup */
 
 #definition {
-
     border: 4px solid $font-color;
     border-radius: 20px;
     background-color: black;

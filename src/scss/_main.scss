@@ -6,7 +6,6 @@ main.padded {
 }
 
 main {
-
     max-width: $small;
     margin-left: auto;
     margin-right: auto;
@@ -25,12 +24,13 @@ main {
 
         a {
             font-weight: 500;
-                &:hover,
-                &:active,
-                &:focus {
-                    border-bottom: 2px solid $link-color;
-                }
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-bottom: 2px solid $link-color;
             }
+        }
 
         ul {
             list-style: none;

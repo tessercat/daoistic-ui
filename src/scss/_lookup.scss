@@ -1,7 +1,6 @@
 /* Daoistic lookup form */
 
 main.lookup {
-
     section.intro {
         margin-bottom: 1.5rem;
         border-bottom: 4px solid $light-background;
@@ -25,11 +24,12 @@ main.lookup {
         input {
             margin-top: 0.5rem;
             width: max-content;
-            padding: .4rem .7rem;
+            padding: 0.4rem 0.7rem;
             border-radius: 5px;
             cursor: pointer;
             background-color: green;
             color: $font-color;
+
             &:hover {
                 filter: brightness(0.6);
             }

@@ -1,7 +1,6 @@
 /* Daoistic list of cards */
 
 main.cards {
-
     line-height: normal;
 
     header {
@@ -26,7 +25,6 @@ $card-img-radius: 10px;
 $card-img-radius-mobile: 5px;
 
 article.card {
-
     display: flex;
     padding-top: 1rem;
     padding-bottom: 1.3rem;
@@ -60,6 +58,7 @@ article.card {
         font-size: smaller;
         margin-left: 0.3rem;
         color: transparent;
+
         &:hover,
         &:active,
         &:focus {
@@ -78,7 +77,6 @@ article.card {
     }
 
     @include small-breakpoint {
-
         figure {
             height: $card-figure-size;
             width: $card-figure-size;

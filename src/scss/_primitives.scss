@@ -1,10 +1,6 @@
 /* Primitives from Tania Rascia's MIT-licensed primitive-ui. */
 
 // Reset
-html {
-    box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
@@ -17,6 +13,7 @@ figure {
 
 // Scaffolding
 html {
+    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
@@ -33,7 +30,44 @@ p {
     margin: 0 0 $margins 0;
 }
 
-h1, h2, h3, h4, h5 {
+// Heading individual styles
+h1 {
+    font-size: $h1-mobile;
+
+    :not(:first-child) {
+        margin-top: 2rem;
+    }
+}
+
+h2 {
+    font-size: $h2-mobile;
+
+    :not(:first-child) {
+        margin-top: 2rem;
+    }
+}
+
+h3 {
+    font-size: $h3-mobile;
+
+    :not(:first-child) {
+        margin-top: 2rem;
+    }
+}
+
+h4 {
+    font-size: $h4-mobile;
+}
+
+h5 {
+    font-size: $h5-mobile;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin: $margins 0;
     font-weight: $heading-font-weight;
     font-family: $heading-font-family;
@@ -45,34 +79,6 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-// Increased margin on additional headings
-h1:not(:first-child),
-h2:not(:first-child),
-h3:not(:first-child) {
-    margin-top: 2rem;
-}
-
-// Heading individual styles
-h1 {
-    font-size: $h1-mobile;
-}
-
-h2 {
-    font-size: $h2-mobile;
-}
-
-h3 {
-    font-size: $h3-mobile;
-}
-
-h4 {
-    font-size: $h4-mobile;
-}
-
-h5 {
-    font-size: $h5-mobile;
-}
-
 // Mobile-first
 @include small-breakpoint {
 
@@ -81,24 +87,29 @@ h5 {
         font-size: $body-font-size;
     }
 
-    // Bigger header margins
-    h1:not(:first-child),
-    h2:not(:first-child),
-    h3:not(:first-child) {
-        margin-top: 2.5rem;
-    }
-
-    // Bigger headers
+    // Bigger headers and margins
     h1 {
         font-size: $h1;
+
+        :not(:first-child) {
+            margin-top: 2.5rem;
+        }
     }
 
     h2 {
         font-size: $h2;
+
+        :not(:first-child) {
+            margin-top: 2.5rem;
+        }
     }
 
     h3 {
         font-size: $h3;
+
+        :not(:first-child) {
+            margin-top: 2.5rem;
+        }
     }
 
     h4 {
