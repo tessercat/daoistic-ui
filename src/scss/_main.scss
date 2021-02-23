@@ -1,8 +1,25 @@
 /* Daoistic main */
 
-main.padded {
+main.page {
     padding-left: 1rem;
     padding-right: 1rem;
+
+    header {
+        padding: 2rem 0;
+        border-bottom: 4px solid $light-background;
+    }
+
+    header.margin {
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        margin: initial;
+    }
+
+    section.subtitle {
+        font-style: italic;
+    }
 }
 
 main {
